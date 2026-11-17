@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>עקבות בתוך המודל | בעקבות Afterlives של קווין ב. לי</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1013;
+      --surface: #181a20;
+      --surface-alt: #21242c;
+      --border: #2e323d;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #f59e0b;
+      --accent-soft: rgba(245, 158, 11, 0.14);
+      --cyan: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Heebo', sans-serif;
+      line-height: 1.7;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      display: inline-block;
+      background: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    h1 {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 8px;
+      max-width: 650px;
+    }
+
+    .authors-badge {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    .authors-badge strong {
+      color: var(--text);
+      display: block;
+      font-size: 1rem;
+    }
+
+    /* Section Headings */
+    h2 {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 1.75rem;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2 span.num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 4px;
+    }
+
+    /* Top Grid: Original Artwork + Part A */
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 28px;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 860px) {
+      .top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    /* Source Artwork Card */
+    .artwork-frame {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      margin-bottom: 16px;
+    }
+
+    .artwork-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .artwork-meta h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .artwork-meta p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    /* Part A */
+    blockquote {
+      background: var(--surface-alt);
+      border-right: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 0.96rem;
+    }
+
+    blockquote p.en {
+      direction: ltr;
+      text-align: left;
+      font-family: 'Frank Ruhl Libre', serif;
+      font-style: italic;
+      color: #e5e7eb;
+      margin-bottom: 6px;
+    }
+
+    blockquote cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.82rem;
+      color: var(--accent);
+    }
+
+    .qa-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .qa-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+
+    .qa-item strong {
+      color: var(--accent);
+      display: block;
+      font-size: 0.93rem;
+      margin-bottom: 4px;
+    }
+
+    .qa-item p {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    /* Part B: Interactive Lab */
+    .part-b-intro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+
+    .method-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .pill.tool {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--cyan);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    .scene-list {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .scene-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .scene-header {
+      padding: 18px 24px;
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .scene-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .scene-title span {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.95rem;
+      margin-right: 8px;
+    }
+
+    .culture-badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .culture-badge.west {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--cyan);
+    }
+
+    .culture-badge.local {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent);
+    }
+
+    /* Before/After Comparison Slider */
+    .compare-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 520px;
+      background: #000;
+      overflow: hidden;
+      user-select: none;
+      cursor: ew-resize;
+    }
+
+    .compare-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .compare-overlay {
+      position: absolute;
+      inset: 0;
+      width: 50%;
+      overflow: hidden;
+      border-left: 3px solid var(--accent);
+    }
+
+    .compare-overlay img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .compare-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #000;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+      pointer-events: none;
+      font-size: 1rem;
+    }
+
+    .corner-label {
+      position: absolute;
+      top: 14px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: rgba(15, 16, 19, 0.82);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .corner-label.orig {
+      right: 14px;
+      color: #fff;
+    }
+
+    .corner-label.ai {
+      left: 14px;
+      color: var(--accent);
+    }
+
+    .scene-body {
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .scene-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .prompt-box {
+      background: #121317;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .prompt-box label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .prompt-box code {
+      display: block;
+      direction: ltr;
+      text-align: left;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .notes-box h4 {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .notes-box p {
+      font-size: 0.94rem;
+      color: #e5e7eb;
+    }
+
+    .quick-btns {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .quick-btns button {
+      background: var(--surface-alt);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .quick-btns button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Conclusion */
+    .conclusion {
+      margin-top: 56px;
+      background: linear-gradient(135deg, var(--surface) 0%, #1c1e26 100%);
+      border: 1px solid var(--accent);
+      border-radius: 16px;
+      padding: 28px 32px;
+    }
+
+    .conclusion h2 {
+      margin-bottom: 12px;
+    }
+
+    .conclusion p {
+      font-size: 1.06rem;
+      color: #f3f4f6;
+      max-width: 860px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div>
+        <div class="eyebrow">המרחב הלטנטי: בינה מלאכותית, אמנות והארכיון</div>
+        <h1>עקבות בתוך המודל: אמנזיה קולנועית של AI</h1>
+        <p class="subtitle">בדיקת הזיכרון החזותי של מודל ג'נרטיבי בין קולנוע מערבי איקוני לקלאסיקה ישראלית, בעקבות <em>Afterlives</em> של קווין ב. לי.</p>
+      </div>
+      <div class="authors-badge">
+        <span>הגשה בזוג:</span>
+        <strong>פולי ואביגייל</strong>
+      </div>
+    </header>
+
+    <!-- PART A + ORIGINAL ARTWORK -->
+    <section class="top-grid">
+      <div class="card">
+        <div class="artwork-frame">
+          <img src="Kevin B. Lee. Afterlives. 2025.jpg" alt="Kevin B. Lee - Afterlives (2025)" />
+        </div>
+        <div class="artwork-meta">
+          <h3>Afterlives (2025)</h3>
+          <p><strong>אמן:</strong> קווין ב. לי (Kevin B. Lee) &bull; מתוך מאמרו של אנטוניו סומאיני, פרק 8</p>
+          <div class="tag-row">
+            <span class="tag">Latent Space</span>
+            <span class="tag">מסה קולנועית</span>
+            <span class="tag">זיכרון מדיה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2><span class="num">חלק א'</span> תגובה לעבודה</h2>
+        <blockquote>
+          <p class="en">"Archives are compressed into latent spaces, and these spaces determine what is visible, what can be searched, and what can be told."</p>
+          <cite>— Antonio Somaini, "Latent Spaces: AI, Art, and the Archive" (October, Spring 2026)</cite>
+        </blockquote>
+
+        <div class="qa-list">
+          <div class="qa-item">
+            <strong>1. באיזה ארכיון/דאטהסט העבודה משתמשת ומה חסר בו?</strong>
+            <p>העבודה פועלת בתוך ארכיון הדימויים הקולנועיים והתיעודיים של המאה ה-20 שנדחס לתוך משקולות של מודלי טקסט-לתמונה. חסרים בו ההקשר ההיסטורי, הכוונה האנושית והמשקל המוסרי של התיעוד המקורי — נותרים רק דפוסים סטטיסטיים שטחיים.</p>
+          </div>
+          <div class="qa-item">
+            <strong>2. מה המרחב הלטנטי חושף ומה הוא מעלים?</strong>
+            <p>המרחב הלטנטי חושף אילו דימויים נצרבו בזיכרון הקולקטיבי של הרשת כארכיטיפים חזותיים, אך הוא מעלים את הייחודיות של הרגע ההיסטורי ואת העדות האנושית החיה, וממיר אותם בהזיה ממוצעת וגנרית.</p>
+          </div>
+          <div class="qa-item">
+            <strong>3. איזו אסטרטגיה העבודה נוקטת (גליץ', הסתרה או סירוב)?</strong>
+            <p>העבודה נוקטת באסטרטגיה של <strong>גליץ' ושיבוש</strong>: לי משתמש ב"זיכרון" הפגום של המכונה כדי לייצר רוחות רפאים חזותיות שחושפות את הפער שבין זיכרון אנושי לסימולציה אלגוריתמית.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART B -->
+    <section>
+      <h2><span class="num">חלק ב'</span> היצירה שלנו: מבחן זיכרון לקולנוע עולמי וישראלי</h2>
+      <div class="part-b-intro">
+        <div>
+          <strong>המהלך שנבחר:</strong> עקבות בתוך המודל (השוואה בין פריים מקורי ל"זיכרון" של המכונה מתוך תיאור טקסטואלי בלבד, ללא העלאת תמונת המקור).
+        </div>
+        <div class="method-pills">
+          <span class="pill">מהלך: עקבות בתוך המודל</span>
+          <span class="pill tool">כלי: Gemini / Nano Banana (Text-to-Image)</span>
+        </div>
+      </div>
+
+      <p style="color: var(--muted); margin-bottom: 22px; font-size: 0.95rem;">
+        גררו את הסמן הכתום על גבי כל תמונה כדי להשוות בין הפריים המקורי (ימין) לבין השחזור של הבינה המלאכותית (שמאל):
+      </p>
+
+      <div class="scene-list" id="sceneList"></div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <h2>במה היצירה שלנו עונה לעבודה המקורית?</h2>
+      <p>
+        בעוד קווין ב. לי בוחן דימויים היסטוריים ותיעודיים טראומטיים כדי לחשוף כיצד המכונה מרוקנת אותם ממשמעות, אנחנו מעבירות את השיטה שלו לזירת הקולנוע העלילתי וההומור — ומשוות בין קלאסיקה הוליוודית לקולנוע ישראלי. הניסוי מוכיח שהמרחב הלטנטי סובל מ"הטיה תרבותית": הוא זוכר את טרנטינו ווס אנדרסון ברמת הקמט בחליפה, אבל מוחק לחלוטין את זאב רווח ואת ההומור של "אסקימו לימון" ומחליף אותם בקלישאות גנריות — ובעיקר מפספס תמיד את התזמון הקומי והנשמה של הבימוי.
+      </p>
+    </section>
+  </div>
+
+  <script>
+    const scenes = [
+      {
+        title: "מלון גרנד בודפשט",
+        year: "ווס אנדרסון, 2014",
+        badge: "קולנוע מערבי — זיכרון גבוה",
+        badgeType: "west",
+        origImg: "Pic6.jpg",
+        aiImg: "Ban1.jpg",
+        prompt: "Film still from The Grand Budapest Hotel (2014) inside a bright glossy red elevator. Four characters: a tall bellboy in a purple uniform holding a brass lever, a young lobby boy in a purple pillbox hat, an elderly aristocratic woman in a red velvet coat, and a mustachioed concierge in a purple suit sitting beside her. Symmetrical Wes Anderson framing.",
+        note: "המודל מזהה מיד את השפה של ווס אנדרסון ואת הכיתוב LOBBY BOY, אך מאבד את הכוריאוגרפיה הרגשית: במקום ארבעה אנשים דחוסים ומבוהלים שנצמדים זה לזה, המכונה מושיבה אותם בריחוק מנומס ושותלת סורג אדום שחותך את כתפו של הנער."
+      },
+      {
+        title: "שכחו אותי בבית 2",
+        year: "כריס קולומבוס, 1992",
+        badge: "קולנוע מערבי — זיכרון גבוה",
+        badgeType: "west",
+        origImg: "Pic7.jpg",
+        aiImg: "Ban2.jpg",
+        prompt: "Film still from Home Alone 2 (1992) on a snowy New York sidewalk outside Duncan's Toy Chest. A young boy in a knit beanie and winter coat stares down at his open hands in shock, while two scruffy burglars in dark winter coats stand right behind him with smug, scheming grins.",
+        note: "האלגוריתם משחזר במדויק את פני השחקנים ואת השלט DUNCAN'S TOY CHEST, אך מחליף סצנת יום חורפית בפנטזיית חג מולד נוצצת עם שלג יורד, וממיר את הבעת האימה הקומית של קווין בהפתעה מנומסת."
+      },
+      {
+        title: "ספרות זולה",
+        year: "קוונטין טרנטינו, 1994",
+        badge: "קולנוע מערבי — זיכרון גבוה",
+        badgeType: "west",
+        origImg: "Pic1.jpg",
+        aiImg: "Ban3.jpg",
+        prompt: "Film still from Pulp Fiction (1994) in a cramped retro 1990s kitchen. Two hitmen in black suits and ties stand side by side holding coffee mugs — one man with long dark hair holds a blue mug, the other man with an afro and sideburns holds a yellow mug. Both have blood splatters on their white shirts.",
+        note: "הספלים הכחול והצהוב במקום, אך המתח והבלגן נעלמו: במקום שני רוצחים מותשים ומרוטים אחרי תאונה ברכב (עם מכונת כביסה ומזוודה ברקע), המכונה מייצרת פוסטר פרסומי מגוהץ שבו כתמי הדם נראים כמו הדפס אופנתי."
+      },
+      {
+        title: "חגיגה בסנוקר",
+        year: "בועז דוידזון, 1975",
+        badge: "קלאסיקה ישראלית — חור בדאטהסט",
+        badgeType: "local",
+        origImg: "Pic5.jpg",
+        aiImg: "Ban4.jpg",
+        prompt: "Film still from the classic 1975 Israeli comedy Hagiga B'Snuker. A comedic Middle Eastern man wearing a black hat, thick round glasses, and a dark suit sits indoors by a white curtain, holding a small white plate of pastries (bourekas) with his cheeks stuffed full of food and a mischievous expression.",
+        note: "כאן המרחב הלטנטי קורס: למודל אין מושג מי זה זאב רווח או מהו הרב חנוכה. במקום קומדיית בורקס מזרחית משנות ה-70, הוא מייצר דמות אירופאית סטריאוטיפית עם קרואסונים וסט תה מהודר בסלון מודרני."
+      },
+      {
+        title: "אסקימו לימון",
+        year: "בועז דוידזון, 1978",
+        badge: "קלאסיקה ישראלית — חור בדאטהסט",
+        badgeType: "local",
+        origImg: "Pic4.jpg",
+        aiImg: "Ban5.jpg",
+        prompt: "Film still from the classic 1978 Israeli teen comedy Lemon Popsicle (Eskimo Limon). A mustachioed Israeli army drill sergeant in a green uniform and beret holds up a peeled banana skin high in the air in front of three young teenage recruits wearing oversized British-style metal helmets.",
+        note: "המכונה מפספסת את הפואנטה הקומית: במקום קליפת בננה ריקה ואכולה (שעליה מבוססת הבדיחה), הרס\"ר מחזיק בננה שלמה וטרייה, ושלושת החיילים השונים (בנצי, מומו ויודל'ה) הוחלפו בשלושה שיבוטים זהים."
+      }
+    ];
+
+    const listEl = document.getElementById("sceneList");
+
+    scenes.forEach((s, idx) => {
+      const card = document.createElement("article");
+      card.className = "scene-card";
+      card.innerHTML = `
+        <div class="scene-header">
+          <div class="scene-title">${idx + 1}. ${s.title} <span>(${s.year})</span></div>
+          <span class="culture-badge ${s.badgeType}">${s.badge}</span>
+        </div>
+
+        <div class="compare-wrapper" id="comp-${idx}">
+          <img src="${s.aiImg}" alt="זיכרון AI - ${s.title}" class="compare-img" />
+          <div class="compare-overlay" id="over-${idx}">
+            <img src="${s.origImg}" alt="מקור - ${s.title}" id="orig-img-${idx}" />
+          </div>
+          <div class="compare-handle" id="handle-${idx}">⇄</div>
+          <span class="corner-label orig">מקור קולנועי</span>
+          <span class="corner-label ai">זיכרון של AI</span>
+        </div>
+
+        <div class="scene-body">
+          <div class="prompt-box">
+            <label>הפרומפט שניתן למודל (ללא תמונת מקור):</label>
+            <code>${s.prompt}</code>
+          </div>
+          <div class="notes-box">
+            <h4>ניתוח בימוי — מה אבד בדרך?</h4>
+            <p>${s.note}</p>
+            <div class="quick-btns">
+              <button type="button" onclick="setSlider(${idx}, 100)">הצג מקור</button>
+              <button type="button" onclick="setSlider(${idx}, 50)">50 / 50</button>
+              <button type="button" onclick="setSlider(${idx}, 0)">הצג AI</button>
+            </div>
+          </div>
+        </div>
+      `;
+      listEl.appendChild(card);
+      initSlider(idx);
+    });
+
+    function setSlider(idx, percent) {
+      const overlay = document.getElementById(`over-${idx}`);
+      const handle = document.getElementById(`handle-${idx}`);
+      // In RTL, right:0 is the start. Width = percent shows original from right.
+      overlay.style.width = percent + "%";
+      handle.style.left = (100 - percent) + "%";
+    }
+
+    function initSlider(idx) {
+      const wrapper = document.getElementById(`comp-${idx}`);
+      const origImg = document.getElementById(`orig-img-${idx}`);
+      let dragging = false;
+
+      function syncImgWidth() {
+        origImg.style.width = wrapper.offsetWidth + "px";
+      }
+      window.addEventListener("resize", syncImgWidth);
+      syncImgWidth();
+
+      function updateFromEvent(clientX) {
+        const rect = wrapper.getBoundingClientRect();
+        // Distance from right edge (since original is anchored to right)
+        let fromRight = rect.right - clientX;
+        let pct = Math.max(0, Math.min(100, (fromRight / rect.width) * 100));
+        setSlider(idx, pct);
+      }
+
+      wrapper.addEventListener("mousedown", (e) => {
+        dragging = true;
+        updateFromEvent(e.clientX);
+      });
+      window.addEventListener("mouseup", () => (dragging = false));
+      window.addEventListener("mousemove", (e) => {
+        if (dragging) updateFromEvent(e.clientX);
+      });
+
+      wrapper.addEventListener("touchstart", (e) => {
+        dragging = true;
+        updateFromEvent(e.touches[0].clientX);
+      }, { passive: true });
+      window.addEventListener("touchend", () => (dragging = false));
+      window.addEventListener("touchmove", (e) => {
+        if (dragging) updateFromEvent(e.touches[0].clientX);
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>
